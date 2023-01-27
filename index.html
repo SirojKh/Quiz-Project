@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="./js/app.js" defer></script>
+    <script src="./js/classes/Questions.js"></script>
+    <script src="./js/classes/Quiz.js"></script>
+</head>
+<body onload='selectSubject()'>
+    <div id="subject-selector" class="center">
+        <h1>Select a subject</h1>
+        <select id="subject-options">
+            ${Object.keys(subjects).map(subject => `<option value='${subject}'>${subject}</option>`).join('')}
+        </select>
+        <button id='start-quiz' onclick='startQuiz()'>Start Quiz</button>
+    </div>
+    </div>
+    <div class="container" style="display: none;" id="quiz-container">
+        <div class="quiz-box">
+            <div id="quiz">
+                <h1>Quiz</h1>
+                <div class="quiz-header">
+                    <p id="progress">Fråga x av y</p>
+                </div>
+                <p id="question"></p>
+
+                <div class="buttons">
+                    <button class="btn" id="btn0">
+                        A. <span id="choice0"></span>
+                    </button>
+                    <button class="btn" id="btn1">
+                        B. <span id="choice1"></span>
+                    </button>
+                    <button class="btn" id="btn2">
+                        C. <span id="choice2"></span>
+                    </button>
+                    <button class="btn" id="btn3">
+                        D. <span id="choice3"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
